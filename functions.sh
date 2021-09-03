@@ -1,14 +1,14 @@
 
 function fastinstall() {
   passato=${passato:-yes}
-  username=${username:-root}
-  usernameforfastinstall=$username
-  useradd
-  username=$usernameforfastinstall
-  sharename=${sharename:-root}
-  sharecomment=${sharecomment:-root directory}
-  sharepath=${sharepath:-/share/root}
-  shareadd
+  
+  for user in ${usernamelist}; do
+    username=$user
+    useradd
+  done
+  
+  echo "NO SHARED ADDED, only config from File"
+  
   unset username
   unset passato
 }
