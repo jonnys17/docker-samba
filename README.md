@@ -229,47 +229,7 @@ reload-samba
 
 ## Fast Install
 
-This script also has a fast install option. Set sharename variable to use fast install option.
-
-```bash
-server:/#docker run -v/var/www:/share/web -e sharename=web -it ahmetozer/samba
-Your password is c3b-NbmV
-New SMB password:
-Retype new SMB password:
-Added user root.
-Re generating config file
-Reloading samba service
-```
-
-If you don't want to use random password, set the password variable.
-
-```bash
-server:/#docker run -it -v/var/www:/share/web -e sharename=web -e password=1234578 ahmetozer/samba
-New SMB password:
-Retype new SMB password:
-Added user root.
-Re generating config file
-Reloading samba service
-```
-
-OR you can set passato to no and script will be ask password in terminal
-
-```bash
-server:/#docker run --rm -it -e sharename=web -e passato=no ahmetozer/samba
-Please enter password (at least 8 character) random password 8jUPPDVb »
-Please retype password »
-New SMB password:
-Retype new SMB password:
-Added user root.
-Share name » web
-share dir » /share/root
-share comment » root directory
-share valid users » root
-Re generating config file
-Reloading samba service
-```
-
-Fast install supported variables username, sharename, sharecomment, sharepath and passato.
+Whith fast install you can provide an usernamelist and the config files and then the smb will be setted up for you. This is useful for ussage with docker-compose.
 
 ---
 
